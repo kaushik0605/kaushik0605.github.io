@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaushik Iyer – Robotics and AI</title>
+<meta name="description" content="Portfolio of Kaushik Iyer, MSc Robotics and Artificial Intelligence student at the University of Aberdeen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #eef2f6;
+  --ink: #14202b;
+  --muted: #5a6877;
+  --line: #c9d3de;
+  --accent: #2b50e6;
+  --font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101820;
+    --ink: #e8eef4;
+    --muted: #9aa8b6;
+    --line: #2a3745;
+    --accent: #7d96ff;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font);
+}
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+main { max-width: 52rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+
+.hero h1 {
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0 0 1.5rem;
+}
+.hero p { max-width: 34rem; font-size: 1.25rem; color: var(--muted); margin: 0 0 1.5rem; }
+.links { display: flex; flex-wrap: wrap; gap: 1.25rem; margin: 0; padding: 0; list-style: none; font-weight: 600; }
+
+h2 { font-size: 1.5rem; font-weight: 600; margin: 5rem 0 1rem; letter-spacing: -0.01em; }
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.project:last-child { border-bottom: 1px solid var(--line); }
+.project h3 { margin: 0; font-size: 1.375rem; font-weight: 600; }
+.project p { grid-column: 1; margin: 0.25rem 0 0; max-width: 36rem; }
+.project .stack { grid-column: 1; margin: 0.5rem 0 0; color: var(--muted); font-size: 0.95rem; }
+.project .out { grid-column: 2; grid-row: 1; align-self: start; font-weight: 600; white-space: nowrap; }
+
+.skills { columns: 2; column-gap: 2rem; padding: 0; margin: 0; list-style: none; max-width: 30rem; }
+.skills li { padding: 0.15rem 0; break-inside: avoid; }
+
+footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 36rem) {
+  .project { grid-template-columns: 1fr; }
+  .project .out { grid-column: 1; grid-row: auto; margin-top: 0.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Kaushik Iyer</h1>
+    <p>MSc Robotics and Artificial Intelligence student at the University of Aberdeen. I work on robot control, NLP, deep learning and multi-agent systems.</p>
+    <ul class="links">
+      <li><a href="https://github.com/your-kaushik0605">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/kaushik-iyer-10150527b/">LinkedIn</a></li>
+      <li><a href="mailto:kaushikiyer725@gmail.com">kaushikiyer725@gmail.com</a></li>
+      <li><a href="resume.pdf">Resume</a></li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="projects">
+    <h2 id="projects">Projects</h2>
+
+    <article class="project">
+      <h3>Neural network control of a 3R robot</h3>
+      <a class="out" href="https://github.com/your-kaushik0605/neural-network-ctc-3r-robot">View code</a>
+      <p>My MSc project. A computed torque controller loses accuracy when the robot model is wrong, so I trained a feedforward neural network to estimate the extra torque that the mismatch causes and added it to the controller. In simulation, it cut tracking error (RMSE) by 81.9%, 79.1% and 76.8% on the three joints, about 79% on average.</p>
+      <p class="stack">MATLAB, computed torque control, neural networks, robot dynamics</p>
+    </article>
+
+    <article class="project">
+      <h3>AnnoMI therapist behaviour classifier</h3>
+      <a class="out" href="https://github.com/your-kaushik0605/annomi-therapist-behaviour-classifier">View code</a>
+      <p>Predicts what a therapist is doing (question, reflection, therapist input or other) from the text of counselling dialogue. I compared a TF-IDF and Logistic Regression baseline with a fine-tuned BERT model on 4,882 labelled utterances. BERT reached 77.5% test accuracy and scored higher on every class I compared, including 0.594 vs 0.507 F1 on the smallest class.</p>
+      <p class="stack">Python, PyTorch, Hugging Face Transformers, scikit-learn, NLTK, pandas</p>
+    </article>
+
+    <article class="project">
+      <h3>Thunderbolt: multi-agent block assembly</h3>
+      <a class="out" href="https://github.com/your-kaushik0605/thunderbolt-mapc-agents">View code</a>
+      <p>A team of five autonomous agents for the Multi-Agent Programming Contest block-assembly scenario. One leader claims tasks and helpers deliver the second block. Agents explore in spirals, merge their separate coordinate frames, recover when stuck and submit tasks together. Includes a Java A* pathfinding action for Jason agents.</p>
+      <p class="stack">Jason (AgentSpeak), Java, multi-agent systems</p>
+    </article>
+
+    <article class="project">
+      <h3>Pick and place with the DOBOT Magician Lite</h3>
+      <a class="out" href="https://github.com/your-kaushik0605/dobot-magician-pick-and-place">View report</a>
+      <p>A group project where a 3-joint robot arm stacks three blocks. We gave Cartesian targets, let the arm’s inverse kinematics solver find the joint angles, and added raised moves and short pauses so the gripper never released a block while moving. It worked reliably, but only with fixed coordinates, so we proposed camera-based feedback next.</p>
+      <p class="stack">DOBOT Magician Lite, inverse kinematics, trajectory planning</p>
+    </article>
+
+    <article class="project">
+      <h3>Personal AI assistant</h3>
+      <a class="out" href="https://github.com/your-kaushik0605/ai-assistant">View code</a>
+      <p>I am building a personal assistant in the spirit of Jarvis and Friday, with the aim of helping me run my daily life. The first version listens to my voice and answers back, using ChatGPT in VS Code.</p>
+      <p class="stack">In progress: voice input, ChatGPT, VS Code</p>
+    </article>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">Skills</h2>
+    <ul class="skills">
+      <li>Python</li>
+      <li>MATLAB</li>
+      <li>PyTorch and Transformers</li>
+      <li>scikit-learn and NLTK</li>
+      <li>Robot kinematics and dynamics</li>
+      <li>Computed torque control</li>
+      <li>Java</li>
+      <li>Jason / AgentSpeak</li>
+    </ul>
+  </section>
+
+  <footer>© <span id="year">2026</span> Kaushik Iyer Chandrasekaran Ananthanarayanan</footer>
+</main>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
